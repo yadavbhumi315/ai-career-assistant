@@ -3,7 +3,7 @@
 An intelligent web application that analyzes resumes and provides career insights, job suggestions, and skill recommendations.
 
 ## 🌐 Live Demo
-👉 https://your-app-link.streamlit.app
+👉 https://ai-career-assistant-bhumi.streamlit.app
 
 ---
 
