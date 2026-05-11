@@ -1,29 +1,43 @@
 import pdfplumber
-import spacy
-
-nlp = spacy.load("en_core_web_sm")
 
 def extract_text_from_pdf(file):
     text = ""
+
     with pdfplumber.open(file) as pdf:
         for page in pdf.pages:
-            if page.extract_text():
-                text += page.extract_text()
+            extracted = page.extract_text()
+
+            if extracted:
+                text += extracted
+
     return text
 
 
 def extract_skills(text):
     skills_list = [
-        "python", "java", "c++", "machine learning",
-        "data science", "html", "css", "javascript",
-        "sql", "deep learning", "nlp"
+        "python",
+        "java",
+        "c++",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "node",
+        "sql",
+        "mongodb",
+        "machine learning",
+        "data science",
+        "streamlit",
+        "django",
+        "flask"
     ]
 
     text = text.lower()
+
     found_skills = []
 
     for skill in skills_list:
         if skill in text:
             found_skills.append(skill)
 
-    return list(set(found_skills))
+    return found_skills
